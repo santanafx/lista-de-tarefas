@@ -1,13 +1,17 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { BotaoCustom, BotaoCustomEditar, Cartao } from './style'
+import { remover } from '../../store/reducers/listaDeContatos'
 
 type Props = {
   nome: string
   email: string
   telefone: string
+  id: number
 }
 
-export const Card = ({ nome, email, telefone }: Props) => {
+export const Card = ({ nome, email, telefone, id }: Props) => {
+  const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
 
   return (
@@ -30,7 +34,7 @@ export const Card = ({ nome, email, telefone }: Props) => {
         </div>
       </Cartao>
       <div>
-        <BotaoCustom>Remover</BotaoCustom>
+        <BotaoCustom onClick={() => dispatch(remover(id))}>Remover</BotaoCustom>
         {estaEditando ? (
           <BotaoCustom onClick={() => setEstaEditando(!estaEditando)}>
             Salvar

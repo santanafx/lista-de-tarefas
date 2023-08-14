@@ -11,7 +11,7 @@ const initialState: ContatoState = {
       id: 1,
       nome: 'Lucas',
       email: 'santanafx@hotmail.com',
-      telefone: '997915854'
+      telefone: 'teste'
     },
     {
       id: 2,
@@ -28,8 +28,8 @@ const initialState: ContatoState = {
   ]
 }
 
-const tarefasSlice = createSlice({
-  name: 'tarefas',
+const listaDeContatosSlice = createSlice({
+  name: 'listaDeContatos',
   initialState,
   reducers: {
     adicionar: (state, action: PayloadAction<Contato>) => {
@@ -42,10 +42,15 @@ const tarefasSlice = createSlice({
       } else {
         state.itens.push(action.payload)
       }
+    },
+    remover: (state, action: PayloadAction<number>) => {
+      state.itens = state.itens.filter(
+        (contato) => contato.id !== action.payload
+      )
     }
   }
 })
 
-export const { adicionar } = tarefasSlice.actions
+export const { adicionar, remover } = listaDeContatosSlice.actions
 
-export default tarefasSlice.reducer
+export default listaDeContatosSlice.reducer

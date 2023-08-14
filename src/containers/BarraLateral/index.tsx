@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Titulo } from '../../styles'
 import { useState } from 'react'
 import Contato from '../../models/Contato'
-import { adicionar } from '../../store/reducers/tarefas'
+import { adicionar } from '../../store/reducers/listaDeContatos'
 
 export const BarraLateral = () => {
   const dispatch = useDispatch()
