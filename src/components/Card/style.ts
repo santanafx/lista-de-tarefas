@@ -1,6 +1,10 @@
 import { styled } from 'styled-components'
 import { Button } from '../Botao/style'
 
+type Props = {
+  editando: boolean
+}
+
 export const Cartao = styled.div`
   border: 1px solid black;
   border-radius: 10px;
@@ -10,19 +14,19 @@ export const Cartao = styled.div`
   div {
     margin: 15px 0;
   }
+`
 
-  input {
-    border: 1px solid white;
-    width: 90%;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    margin: 10px 20px;
-    padding: 5px;
-    font-size: 1.1rem;
-    background-color: transparent;
-    color: black;
-  }
+export const CartaoInput = styled.input<Props>`
+  border: 1px solid white;
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 20px;
+  padding: 5px;
+  font-size: 1.1rem;
+  background-color: ${(props) => (props.editando ? 'white' : 'lightgreen')};
+  color: black;
 `
 
 export const BotaoCustomEditar = styled(Button)`
