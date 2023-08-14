@@ -1,34 +1,45 @@
 import { useState } from 'react'
 import { BotaoCustom, BotaoCustomEditar, Cartao } from './style'
 
-export const Card = () => {
-  const [ativo, setAtivo] = useState(false)
+type Props = {
+  nome: string
+  email: string
+  telefone: string
+}
 
-  const editar = () => {
-    setAtivo(!editar)
-  }
+export const Card = ({ nome, email, telefone }: Props) => {
+  const [estaEditando, setEstaEditando] = useState(false)
+
   return (
     <>
       <Cartao>
         <div>
           <label htmlFor="">Nome</label>
-          <input type="text" disabled value={'teste'} />
-          <BotaoCustomEditar>Editar</BotaoCustomEditar>
+          <input type="text" disabled value={nome} />
+          {estaEditando ? <BotaoCustomEditar>Editar</BotaoCustomEditar> : ''}
         </div>
         <div>
           <label htmlFor="">Email</label>
-          <input type="email" disabled value={'teste'} />
-          <BotaoCustomEditar>Editar</BotaoCustomEditar>
+          <input type="text" disabled value={email} />
+          {estaEditando ? <BotaoCustomEditar>Editar</BotaoCustomEditar> : ''}
         </div>
         <div>
           <label htmlFor="">Telefone</label>
-          <input type="tel" disabled value={'teste'} />
-          <BotaoCustomEditar>Editar</BotaoCustomEditar>
+          <input type="text" disabled value={telefone} />
+          {estaEditando ? <BotaoCustomEditar>Editar</BotaoCustomEditar> : ''}
         </div>
       </Cartao>
       <div>
         <BotaoCustom>Remover</BotaoCustom>
-        <BotaoCustom onClick={() => editar}>Editar</BotaoCustom>
+        {estaEditando ? (
+          <BotaoCustom onClick={() => setEstaEditando(!estaEditando)}>
+            Salvar
+          </BotaoCustom>
+        ) : (
+          <BotaoCustom onClick={() => setEstaEditando(!estaEditando)}>
+            Editar
+          </BotaoCustom>
+        )}
       </div>
     </>
   )

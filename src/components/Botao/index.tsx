@@ -1,9 +1,10 @@
+import React, { ReactNode } from 'react'
 import { Button } from './style'
 
 type Props = {
-  texto: string
+  children: ReactNode
 }
 
-export const Botao = ({ texto }: Props) => {
-  return <Button>{texto}</Button>
+export const Botao = ({ children }: Props) => {
+  return <Button>{children}</Button>
 }
