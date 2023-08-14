@@ -13,4 +13,10 @@ export const Container = styled.div`
   grid-template-columns: 600px auto;
 `
 
+export const Titulo = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+`
+
 export default EstiloGlobal

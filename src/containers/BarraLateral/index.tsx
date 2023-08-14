@@ -1,42 +1,37 @@
+import { Aside, BotaoAdd } from './style'
+import { Titulo } from '../../styles'
+import { InputContainer } from '../../components/InputContainer'
+import { Botao } from '../../components/Botao'
 import { useState } from 'react'
-
-import {
-  Aside,
-  Botao,
-  BotaoAdd,
-  Input,
-  InputContainer,
-  Label,
-  Titulo
-} from './style'
 
 export const BarraLateral = () => {
   const [ativo, setAtivo] = useState(false)
+
+  const ativar = () => {
+    setAtivo(!ativo)
+  }
 
   return (
     <>
       <Aside>
         <Titulo>Adicione o contato:</Titulo>
-        <BotaoAdd
-          onClick={() => {
-            setAtivo(!ativo)
-          }}
-        >
-          +
-        </BotaoAdd>
-        <InputContainer ativo={ativo}>
-          <Label>Nome:</Label>
-          <Input placeholder="Digite o nome do contato..." />
-        </InputContainer>
-        <InputContainer ativo={ativo}>
-          <Label>Email:</Label>
-          <Input placeholder="Digite o email do email..." />
-        </InputContainer>
-        <InputContainer ativo={ativo}>
-          <Label>Telefone:</Label>
-          <Input placeholder="Digite o telefone do telefone..." />
-          <Botao>Adicionar</Botao>
-        </InputContainer>
+        <BotaoAdd onClick={ativar}>+</BotaoAdd>
+        <InputContainer
+          label="Nome"
+          descricao="Digite o nome do contato..."
+          ativo={ativo}
+        />
+        <InputContainer
+          label="Email"
+          descricao="Digite o email do contato..."
+          ativo={ativo}
+        />
+        <InputContainer
+          label="Telefone"
+          descricao="Digite o telefone do contato..."
+          ativo={ativo}
+        />
+        <Botao texto={'Adicionar'}></Botao>
       </Aside>
     </>
   )
