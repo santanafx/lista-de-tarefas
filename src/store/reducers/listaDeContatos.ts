@@ -6,26 +6,7 @@ type ContatoState = {
 }
 
 const initialState: ContatoState = {
-  itens: [
-    {
-      id: 1,
-      nome: 'Jose',
-      email: 'santanafx@hotmail.com',
-      telefone: 'teste'
-    },
-    {
-      id: 2,
-      nome: 'Alfredo',
-      email: 'santanafx@hotmail.com',
-      telefone: '997915854'
-    },
-    {
-      id: 3,
-      nome: 'Lucas',
-      email: 'santanafx@hotmail.com',
-      telefone: '997915854'
-    }
-  ]
+  itens: []
 }
 
 const listaDeContatosSlice = createSlice({

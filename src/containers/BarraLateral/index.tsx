@@ -11,13 +11,15 @@ export const BarraLateral = () => {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [telefone, setTelefone] = useState('')
+  const [somarId, setSomarId] = useState(1)
 
   const ativar = () => {
     setAtivo(!ativo)
   }
 
   const adicionarContato = () => {
-    const adicionarContato = new Contato(5, nome, email, telefone)
+    setSomarId(() => somarId + 1)
+    const adicionarContato = new Contato(somarId, nome, email, telefone)
 
     dispatch(adicionar(adicionarContato))
   }
