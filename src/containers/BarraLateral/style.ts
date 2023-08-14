@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Botao } from '../../components/Botao'
+import { variaveis } from '../../styles/variaveis'
 
 type Props = {
   ativo: boolean
@@ -7,7 +7,7 @@ type Props = {
 
 export const Aside = styled.aside`
   padding: 30px;
-  background-color: lightblue;
+  background-color: ${variaveis.azulClaro};
   display: flex;
   flex-direction: column;
 `
@@ -15,7 +15,7 @@ export const Aside = styled.aside`
 export const BotaoAdd = styled.button`
   padding: 5px 10px;
   color: black;
-  background-color: white;
+  background-color: ${variaveis.branco};
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -25,7 +25,7 @@ export const BotaoAdd = styled.button`
   margin-bottom: 20px;
 
   &:hover {
-    color: grey;
+    color: ${variaveis.cinza};
   }
 `
 
@@ -53,7 +53,7 @@ export const Container = styled.div<Props>`
 export const BotaoAdicionar = styled.button`
   padding: 5px 10px;
   color: black;
-  background-color: white;
+  background-color: ${variaveis.branco};
   border-radius: 10px;
   height: 50px;
   width: 150px;
@@ -64,6 +64,6 @@ export const BotaoAdicionar = styled.button`
   font-weight: bold;
 
   &:hover {
-    color: grey;
+    color: ${variaveis.cinza};
   }
 `

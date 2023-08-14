@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { variaveis } from '../../styles/variaveis'
 
 export const Button = styled.button`
   padding: 5px 10px;
-  color: black;
-  background-color: white;
+  color: ${variaveis.preto};
+  background-color: ${variaveis.branco};
   border-radius: 10px;
   height: 50px;
   width: 150px;
@@ -14,6 +15,6 @@ export const Button = styled.button`
   font-weight: bold;
 
   &:hover {
-    color: grey;
+    color: ${variaveis.cinza};
   }
 `

@@ -1,15 +1,16 @@
 import { styled } from 'styled-components'
 import { Button } from '../Botao/style'
+import { variaveis } from '../../styles/variaveis'
 
 type Props = {
   editando: boolean
 }
 
 export const Cartao = styled.div`
-  border: 1px solid black;
+  border: 1px solid ${variaveis.preto};
   border-radius: 10px;
   padding: 15px;
-  background-color: lightgreen;
+  background-color: ${variaveis.verdeClaro};
 
   div {
     margin: 15px 0;
@@ -17,7 +18,7 @@ export const Cartao = styled.div`
 `
 
 export const CartaoInput = styled.input<Props>`
-  border: 1px solid white;
+  border: 1px solid ${variaveis.branco};
   width: 90%;
   height: 40px;
   border-radius: 10px;
